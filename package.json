@@ -1,17 +1,47 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "hrsf128-front-end-capstone",
+  "description": "> Project description",
   "author": "",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "start": "nodemon server.js",
+    "react-dev": "webpack -d --watch",
+    "db:setup": "node database-mongodb/seed.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "install": "^0.13.0",
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.19",
+    "nodemon": "^2.0.4",
+    "npm": "^6.14.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "underscore": "^1.10.2"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "version": "1.0.0",
+  "main": "(server.js)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erfanch/hrsf128-front-end-capstone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Erfanch/hrsf128-front-end-capstone/issues"
+  },
+  "homepage": "https://github.com/Erfanch/hrsf128-front-end-capstone#readme"
 }

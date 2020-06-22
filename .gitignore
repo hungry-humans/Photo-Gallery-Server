@@ -1,4 +1,3 @@
-node_modules
 config.json
 Administrator_accessKey
 
@@ -20,3 +19,4 @@ coverage
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 dist/
+bundle.js/

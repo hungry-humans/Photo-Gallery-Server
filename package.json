@@ -9,9 +9,10 @@
   "scripts": {
     "start": "nodemon server.js",
     "react-dev": "webpack -d --watch",
-    "db:setup": "node database-mongodb/seed.js"
+    "db:setup": "node database/seed.js"
   },
   "dependencies": {
+    "aws-sdk": "^2.701.0",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
@@ -28,8 +29,8 @@
     "underscore": "^1.10.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.10.1",
     "babel-loader": "^8.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",

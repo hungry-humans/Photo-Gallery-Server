@@ -8,18 +8,23 @@ const port = 5500;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(express.static('./client'));
+app.use(express.static('./client/dist'));
 
 // app.get('/photogallery', function (req, res) {
 //   console.log(req.body)
 //   res.send(200);
 // })
 
-app.get('/', function(req, res) {
+app.get('/header', function(req, res) {
+  // console.log('request', req.param.body);
+  // console.log('response', res.param);
+  // console.log('gallery', Gallery.find({}).schema )
   Gallery.find({}).exec(function(err,blogs) {
     res.send(blogs);
   })
 });
 
+// app.post('/header', )
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+
+app.listen(port, () => console.log(`Server listening at http://localhost:${port}`))

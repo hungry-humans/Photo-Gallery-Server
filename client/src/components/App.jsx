@@ -5,14 +5,20 @@ import Header from './Header.jsx';
 
 var requestedOnce = false;
 
+
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       photos : samplePhotos,
-      currentPhoto : samplePhotos[1]
+      currentPhoto : samplePhotos[1],
     }
     this.getPhotos = this.getPhotos.bind(this);
+  }
+
+
+  componentDidMount() {
+    this.getPhotos()
   }
 
   getPhotos() {
@@ -35,11 +41,9 @@ class App extends React.Component {
 
   render () {
     return (
-      <div className="row">
-        {this.getPhotos()}
+      <div className="mySlides">
+        {/* {this.getPhotos()} */}
         <Header photos={this.state.photos}/>
-        {/* <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a> */}
       </div>
     )
   }

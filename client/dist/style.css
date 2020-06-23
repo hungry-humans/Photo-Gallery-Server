@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 80%;
+  max-height:fit-content;
+  /* padding: 5px; */
+  /* height: min-content; */
+  overflow: auto;
+  /* background-color: rgb(31, 26, 26); */
+  white-space: nowrap;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.h2 {
+  background-color: rgb(160, 71, 133);
+}

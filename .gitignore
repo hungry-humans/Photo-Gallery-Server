@@ -1,6 +1,5 @@
 config.json
 Administrator_accessKey
-node_modules
 .DS_Store
 ## NPM ##
 npm
@@ -19,3 +18,4 @@ coverage
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 dist/
+bundle.js/

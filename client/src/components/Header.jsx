@@ -5,8 +5,8 @@ var ind = 0;
 
 const Header = (props) => (
 
-  <div className="slideshow-container">
-    {props.photos.map(photo => <div className='mySlides fade' style={{'display': photo.businessId === props.active_id ? 'block' : 'none'}}  key={photo._id}><img src={photo.thumbnail}></img></div>)}
+  <div className="slideshow-container row">
+    {props.photos.map(photo => <div className='mySlides fade column' style={{'display': photo.businessId >= props.active_id && photo.businessId < props.active_id + props.window_size  ? 'block' : 'none'}}  key={photo._id}><img src={photo.thumbnail}></img></div>)}
 
   </div>
 

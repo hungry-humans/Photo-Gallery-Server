@@ -46,8 +46,8 @@ class App extends React.Component {
         <div>
           {/* {this.getPhotos()} */}
           <Header photos={this.state.photos} active_id={this.state.active_id} window_size={WINDOW_SIZE}/>
-          <a className="prev" onClick={(event) => {this.setState({active_id : this.state.active_id < WINDOW_SIZE? this.state.photos.length - WINDOW_SIZE + this.state.active_id : this.state.active_id-WINDOW_SIZE})}}>&#10094;</a>
-          <a className="next" onClick={(event) => {this.setState({active_id : this.state.active_id > this.state.photos.length-WINDOW_SIZE ? 0: this.state.active_id + WINDOW_SIZE})}}>&#10095;</a>
+          <a className="prev" onClick={(event) => {this.setState({active_id : this.state.active_id < WINDOW_SIZE? this.state.photos.length - WINDOW_SIZE : this.state.active_id-WINDOW_SIZE})}}>&#10094;</a>
+          <a className="next" onClick={(event) => {this.setState({active_id : this.state.active_id >= this.state.photos.length-WINDOW_SIZE ? 0: this.state.active_id + WINDOW_SIZE})}}>&#10095;</a>
         </div>
       </span>
     )

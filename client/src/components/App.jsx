@@ -44,6 +44,7 @@ class App extends React.Component {
     return (
       <span className='row'>
         <div>
+          <h2>Hello World!</h2>
           {/* {this.getPhotos()} */}
           <Header photos={this.state.photos} active_id={this.state.active_id} window_size={WINDOW_SIZE}/>
           <a className="prev" onClick={(event) => {this.setState({active_id : this.state.active_id < WINDOW_SIZE? this.state.photos.length - WINDOW_SIZE : this.state.active_id-WINDOW_SIZE})}}>&#10094;</a>

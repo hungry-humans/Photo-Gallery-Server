@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       photos : samplePhotos,
       currentPhoto : samplePhotos[1],
+      active_id : 0
     }
     this.getPhotos = this.getPhotos.bind(this);
   }
@@ -41,9 +42,11 @@ class App extends React.Component {
 
   render () {
     return (
-      <div className="mySlides">
+      <div>
         {/* {this.getPhotos()} */}
-        <Header photos={this.state.photos}/>
+        <Header photos={this.state.photos} active_id={this.state.active_id}/>
+        <a className="prev" onClick={(event) => {this.setState({active_id : this.state.active_id === 0? this.state.photos.length - 1: this.state.active_id-1})}}>&#10094;</a>
+        <a className="next" onClick={(event) => {this.setState({active_id : this.state.active_id === this.state.photos.length-1 ? 0 : this.state.active_id+1})}}>&#10095;</a>
       </div>
     )
   }

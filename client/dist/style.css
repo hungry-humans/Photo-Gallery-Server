@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
 .column {
   float: left;
   width: 100%;
@@ -35,7 +40,7 @@
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 27%;
+  top: 45%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -79,4 +84,96 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+.modal {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 3px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  height: 600px;
+  max-width: 80%;
+}
+
+.modal-body {
+  flex: 70%;
+  background-color: gray;
+  padding: 20px;;
+}
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+.footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  position: absolute;
+  bottom: 0;
+}
+
+.icon1 {
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media screen and (max-width: 700px) {
+  .modal {
+    flex-direction: column;
+  }
 }

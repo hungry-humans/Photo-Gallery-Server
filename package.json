@@ -10,7 +10,9 @@
     "start": "nodemon server.js",
     "react-dev": "webpack -d --watch",
     "db:setup": "node database/seed.js",
-    "test": "jest"
+    "test": "jest",
+    "build": "NODE_ENV=development babel src -d lib",
+    "build-prod": "NODE_ENV=production babel src -d lib"
   },
   "dependencies": {
     "aws-sdk": "^2.702.0",

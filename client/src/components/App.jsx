@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import samplePhotos from '../samplePhotos.js';
 import Header from './Header.jsx';
+import Popups from './Popups.jsx';
 
 var requestedOnce = false;
 const WINDOW_SIZE = 6;
@@ -44,9 +45,12 @@ class App extends React.Component {
     return (
       <span className='row'>
         <div>
-          <h2>Hello World!</h2>
           {/* {this.getPhotos()} */}
           <Header photos={this.state.photos} active_id={this.state.active_id} window_size={WINDOW_SIZE}/>
+          {/* <button data-modal-target="#modal">Click On Me!</button> */}
+          {/* <div>
+            <Popups />
+          </div> */}
           <a className="prev" onClick={(event) => {this.setState({active_id : this.state.active_id < WINDOW_SIZE? this.state.photos.length - WINDOW_SIZE : this.state.active_id-WINDOW_SIZE})}}>&#10094;</a>
           <a className="next" onClick={(event) => {this.setState({active_id : this.state.active_id >= this.state.photos.length-WINDOW_SIZE ? 0: this.state.active_id + WINDOW_SIZE})}}>&#10095;</a>
         </div>

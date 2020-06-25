@@ -16,8 +16,10 @@ class App extends React.Component {
       active_id : 0
     }
     this.getPhotos = this.getPhotos.bind(this);
-  }
+    this.previousHandler= this.previousHandler.bind(this);
+    this.nextHandler= this.nextHandler.bind(this);
 
+  }
 
   componentDidMount() {
     this.getPhotos()
@@ -41,6 +43,14 @@ class App extends React.Component {
     });
   }
 
+  nextHandler(event) {
+    this.setState({active_id : this.state.active_id >= this.state.photos.length-WINDOW_SIZE ? 0: this.state.active_id + WINDOW_SIZE}
+      )}
+
+
+  previousHandler(event) {
+    this.setState({active_id : this.state.active_id < WINDOW_SIZE? this.state.photos.length - WINDOW_SIZE : this.state.active_id-WINDOW_SIZE})}
+
   render () {
     return (
       <span className='row'>
@@ -48,11 +58,11 @@ class App extends React.Component {
           {/* {this.getPhotos()} */}
           <Header photos={this.state.photos} active_id={this.state.active_id} window_size={WINDOW_SIZE}/>
           {/* <button data-modal-target="#modal">Click On Me!</button> */}
-          {/* <div>
+          <div className="popups">
             <Popups />
-          </div> */}
-          <a className="prev" onClick={(event) => {this.setState({active_id : this.state.active_id < WINDOW_SIZE? this.state.photos.length - WINDOW_SIZE : this.state.active_id-WINDOW_SIZE})}}>&#10094;</a>
-          <a className="next" onClick={(event) => {this.setState({active_id : this.state.active_id >= this.state.photos.length-WINDOW_SIZE ? 0: this.state.active_id + WINDOW_SIZE})}}>&#10095;</a>
+          </div>
+          <a className="prev" onClick={this.previousHandler}>&#10094;</a>
+          <a className="next" onClick={this.nextHandler}>&#10095;</a>
         </div>
       </span>
     )
